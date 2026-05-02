@@ -1,0 +1,44 @@
+# Configuration descriptions for Home Assistant interface
+configuration:
+  host:
+    name: "Host"
+    description: "IP address of the interface, or specify a specific IP (e.g., 127.0.0.1)"
+  port:
+    name: "Port"
+    description: "TCP port for incoming Telegram connections"
+  secret:
+    name: "Secret Key"
+    description: "Leave empty — will be automatically generated (32 hex characters)"
+  dc_ip:
+    name: "Add Data Centers (DC:IP)"
+    description: "List of Telegram servers"
+  auto_update:
+    name: "Auto-update TG WS Proxy"
+    description: "Check GitHub daily and update"
+  debug:
+    name: "Debug Mode"
+    description: "Enable debug logging"
+  no_cfproxy:
+    name: "Disable Cloudflare Proxy"
+    description: "Disable proxying attempt via Cloudflare"
+  cfproxy_domain:
+    name: "Cloudflare Domain"
+    description: "Specify your custom domain for Cloudflare proxying. More details: https://github.com/Flowseal/tg-ws-proxy/blob/main/docs/CfProxy.md"
+  cfproxy_priority:
+    name: "Cloudflare Priority"
+    description: "Try proxying via Cloudflare before direct TCP connection"
+  fake_tls_domain:
+    name: "Fake TLS Masking"
+    description: "Enable Fake TLS (ee-secret) masking with the specified SNI domain"
+  proxy_protocol:
+    name: "PROXY Protocol"
+    description: "Accept HAProxy PROXY protocol v1 (for operation behind nginx/haproxy with proxy_protocol on)"
+  buf_kb:
+    name: "Buffer Size"
+    description: "Buffer size in KB (default 256)"
+  pool_size:
+    name: "Connection Pool Size"
+    description: "Number of pre-established connections per DC (default 4)"
+
+network:
+  2443/tcp: "Connection port"

@@ -1,0 +1,52 @@
+name: "TG WS Proxy (haos)"
+version: "1.0.1"
+slug: "tg_ws_proxy_haos"
+description: |
+  Local MTProto proxy for Telegram | Локальный MTProto-прокси для Telegram
+author: "chongmorrino"
+url: "https://github.com/chOng-m0rrino/tg-ws-proxy-haos"
+arch:
+  - amd64
+  - aarch64
+init: false
+startup: services
+boot: auto
+host_network: true
+map:
+  - config:rw
+  - share:rw
+  - addons:rw
+
+options:
+  host: "0.0.0.0"
+  port: 2443
+  secret: ""
+  dc_ip:
+    - "2:149.154.167.220"
+    - "4:149.154.167.220"
+    - "203:149.154.167.220"
+  buf_kb: 256
+  pool_size: 4
+  auto_update: true
+  cfproxy_priority: true
+  no_cfproxy: false
+  cfproxy_domain: ""
+  fake_tls_domain: ""
+  proxy_protocol: false
+  debug: false
+
+schema:
+  host: str
+  port: port
+  secret: str?
+  dc_ip:
+    - str
+  buf_kb: int?
+  pool_size: int?
+  auto_update: bool?
+  cfproxy_priority: bool?
+  no_cfproxy: bool?
+  cfproxy_domain: str?
+  fake_tls_domain: str?
+  proxy_protocol: bool?
+  debug: bool?

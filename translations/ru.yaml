@@ -1,0 +1,44 @@
+# Описания настроек для интерфейса Home Assistant
+configuration:
+  host:
+    name: "Хост"
+    description: "IP-адрес интерфейса. или укажи конкретный IP (например, 127.0.0.1)"
+  port:
+    name: "Порт"
+    description: "TCP-порт для входящих подключений Telegram"
+  secret:
+    name: "Секретный ключ"
+    description: "Оставьте пустым — сгенерируется автоматически (32 hex-символа)"
+  dc_ip:
+    name: "Добавить Дата-центры (DC:IP)"
+    description: "Список серверов Telegram."
+  auto_update:
+    name: "Автообновление TG WS Proxy"
+    description: "Раз в сутки проверять GitHub и обновлять"
+  debug:
+    name: "Режим отладки"
+    description: "Включить debug логирование"
+  no_cfproxy:
+    name: "Отключить Cloudflare прокси"
+    description: "Отключить попытку проксирования через Cloudflare"
+  cfproxy_domain:
+    name: "Cloudflare домен"
+    description: "Указать свой домен для проксирования через Cloudflare. Подробнее https://github.com/Flowseal/tg-ws-proxy/blob/main/docs/CfProxy.md"
+  cfproxy_priority:
+    name: "Приоритет Cloudflare"
+    description: "Пробовать проксировать через Cloudflare перед прямым TCP подключением"
+  fake_tls_domain:
+    name: "Fake TLS маскировка"
+    description: "Включить Fake TLS (ee-secret) маскировку с указанным SNI-доменом"
+  proxy_protocol:
+    name: "PROXY protocol"
+    description: "Принимать HAProxy PROXY protocol v1 (для работы за nginx/haproxy с proxy_protocol on)"
+  buf_kb:
+    name: "Размер буфера"
+    description: "Размер буфера в КБ (по умолчанию 256)"
+  pool_size:
+    name: "Размер пула соединений"
+    description: "Количество заготовленных соединений на каждый DC (по умолчанию 4)"
+
+network:
+  2443/tcp: "Порт подключения"
